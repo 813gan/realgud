@@ -1,6 +1,10 @@
+(require 'load-relative)
+(require-relative-list
+ '("helper") "realgud-")
+
 (defun realgud-locals-init ()
-  (with-current-buffer (realgud-get-cmdbuf)
-    (let ((sleep-count 0))
+  (with-current-buffer-safe (realgud-get-cmdbuf)
+      (let ((sleep-count 0))
       (setq process (get-buffer-process (current-buffer)))
       (realgud:cmd-run-command nil "info-locals")
       (realgud-cmdbuf-info-divert-output?= t)
@@ -31,4 +35,4 @@
     )
   ) )
 
-(provide-me)
+(provide-me "realgud-")
