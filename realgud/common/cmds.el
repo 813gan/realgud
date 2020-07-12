@@ -362,6 +362,12 @@ If no argument specified use 0 or the most recent frame."
   (realgud:cmd-run-command nil "info-breakpoints")
   )
 
+(defun realgud:cmd-info-locals()
+  "Show all list of all locals in TSV format"
+  (interactive "")
+  (realgud:cmd-run-command nil "info-locals")
+  )
+
 (defun realgud:cmd-kill()
   "Kill debugger process."
   (interactive)
