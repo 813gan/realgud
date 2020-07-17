@@ -86,6 +86,7 @@
 
   bt-buf               ;; backtrace buffer if it exists
   brkpt-buf            ;; breakpoint buffer if it exists
+  locals-buf           ;; locals buffer if it exists
   bp-list              ;; list of breakpoints
   divert-output?       ;; Output is part of a conversation between front-end
                        ;; debugger.
@@ -151,6 +152,7 @@
 (realgud-struct-field-setter "realgud-cmdbuf-info" "bp-list")
 (realgud-struct-field-setter "realgud-cmdbuf-info" "bt-buf")
 (realgud-struct-field-setter "realgud-cmdbuf-info" "brkpt-buf")
+(realgud-struct-field-setter "realgud-cmdbuf-info" "locals-buf")
 (realgud-struct-field-setter "realgud-cmdbuf-info" "cmd-args")
 (realgud-struct-field-setter "realgud-cmdbuf-info" "last-input-end")
 (realgud-struct-field-setter "realgud-cmdbuf-info" "divert-output?")
@@ -456,6 +458,7 @@ values set in the debugger's init.el."
 	     :srcbuf-list nil
 	     :bt-buf nil
 	     :brkpt-buf nil
+	     :locals-buf nil
 	     :bp-list nil
 	     :divert-output? nil
 	     :cmd-hash cmd-hash

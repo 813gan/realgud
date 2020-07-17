@@ -150,6 +150,16 @@ OPT-BUFFER or if that is ommited `current-buffer'."
       ))
   )
 
+(defun realgud-get-locals-buf( &optional opt-buffer)
+  "Return the locals buffer associated with
+OPT-BUFFER or if that is ommited `current-buffer'."
+  (let* ((buffer (or opt-buffer (current-buffer)))
+	 (cmdbuf (realgud-get-cmdbuf buffer)))
+    (with-current-buffer-safe cmdbuf
+      (realgud-sget 'cmdbuf-info 'locals-buf)
+      ))
+  )
+
 (defun realgud-get-process (&optional opt-buffer)
   "Return the process buffer associated with OPT-BUFFER or
   `current-buffer' if that is omitted. nil is returned if
