@@ -583,7 +583,7 @@ command-process buffer has stored."
   (let* ((buffer (or opt-buffer (current-buffer)))
 	 (cmdbuf (realgud-get-cmdbuf buffer)))
     (if cmdbuf
-	(with-current-buffer-safe (cmdbuf)
+	(with-current-buffer-safe cmdbuf
 	  (realgud-sget 'cmdbuf-info key))
       (error "Unable to find cmdbuf for '%s'" buffer))
     )
