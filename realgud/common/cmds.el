@@ -374,6 +374,12 @@ If no argument specified use 0 or the most recent frame."
   (realgud:cmd-run-command var-name "info-value")
   )
 
+(defun realgud:cmd-info-type(var-name)
+  "Get type of single variable"
+  (interactive "sVariable name: ")
+  (realgud:cmd-run-command var-name "info-type")
+  )
+
 (defun realgud:cmd-kill()
   "Kill debugger process."
   (interactive)
