@@ -179,7 +179,6 @@
        realgud-breakpoint-info
        (realgud-breakpoint-info? realgud-breakpoint-info)))
 
-
 (defun realgud-goto-entry-n ()
   "Go to an entry number.
 

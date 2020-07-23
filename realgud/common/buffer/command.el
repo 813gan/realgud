@@ -460,7 +460,7 @@ values set in the debugger's init.el."
 	     :bt-buf nil
 	     :brkpt-buf nil
 	     :locals-buf nil
-	     :locals-data (make-hash-table)
+	     :locals-data (make-hash-table :test 'equal)
 	     :bp-list nil
 	     :divert-output? nil
 	     :cmd-hash cmd-hash
@@ -585,8 +585,6 @@ command-process buffer has stored."
     (if cmdbuf
 	(with-current-buffer-safe cmdbuf
 	  (realgud-sget 'cmdbuf-info key))
-      (error "Unable to find cmdbuf for '%s'" buffer))
-    )
-  )
+      (error "Unable to find cmdbuf for '%s'" buffer)) ))
 
 (provide-me "realgud-buffer-")
